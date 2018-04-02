@@ -76,4 +76,9 @@ function solve(start, end, close, member) {
 let member = { Tono: 2, Anton: 4, Budi: 5 };
 
 // driver code
+// @ param 1: start
+// @ param 2: end
+// @ param 3: hari libur
+// @ param 4: member
+
 solve(7, 31, 5, member);
