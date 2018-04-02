@@ -26,29 +26,24 @@ function daftarHadir(member, startDate) {
 
   for (var i = startDate; i <= 31; i++) {
     var hadir = '';
-    // if (i === startDate) {
-    //   for (var j = 0; j < member.length; j++) {
-    //     hadir += member[j][0] + ', ';
-    //
-    //   }
-    //   console.log('Tanggal ' + i + ': ' + hadir.substr(0, hadir.length - 2) + '.');
-    // }
+
     if (i % 5 === 0) {
       console.log('Tanggal ' + i + ': ' + 'Tempat fitness tutup') ;
-    }
-    for (var j = 0; j < member.length; j++) {
-      for (var k = startDate; k <= 31; k += member[j][1]) {
-        if (i === k) {
-          hadir += member[j][0] + ', ';
+    } else {
+      for (var j = 0; j < member.length; j++) {
+        for (var k = startDate; k <= 31; k += member[j][1]) {
+          if (i === k) {
+            hadir += member[j][0] + ', ';
+          }
         }
       }
+      if (hadir.length === 0) {
+        console.log('Tanggal ' + i + ': ');
+      } else {
+        console.log('Tanggal ' + i + ': ' + hadir.substr(0, hadir.length - 2) + '.')
+      }
     }
-    if (hadir.length === 0) {
-      console.log('Tanggal ' + i + ': ');
-    } else {
-      console.log('Tanggal ' + i + ': ' + hadir.substr(0, hadir.length - 2) + '.')
-    }
-    // console.log('Tanggal ' + i + ': ' + hadir.substr(0, hadir.length - 2) + '.');
+
   }
   return '';
 }
