@@ -16,21 +16,21 @@
 end function
  */
 
-function jadwalFitness(list){
+function jadwalFitness(list,date){
     var result = {}
-    for(let i=0;i<=24;i++){
-        result['tanggal ' + (i + 7)] = []
-        if ((i + 7) % 5 == 0) {
-            result['tanggal ' + (i + 7)].push('Tempat Fitness Tutup')
+    for(let i=0;i<=31-date;i++){
+        result['tanggal ' + (i + date)] = []
+        if ((i + date) % 5 == 0) {
+            result['tanggal ' + (i + date)].push('Tempat Fitness Tutup')
         }
         else {
             for(let key in list){
                 if(i%list[key]==0){
-                    result['tanggal ' + (i + 7)].push(key)
+                    result['tanggal ' + (i + date)].push(key)
                 }
             }
         }  
     }
     return result
 }
-console.log(jadwalFitness({'Tono': 2, 'Anton': 4, 'Budi': 5}))
+console.log(jadwalFitness({'Tono': 2, 'Anton': 4, 'Budi': 5},7))
