@@ -1,0 +1,45 @@
+Tempat fitness dibuka tanggal 7
+Tutup setiap kelipatan tanggal 5
+Jadwal = Tono 2 hari sekali
+         Anton 4 hari sekali
+         Budi 5 hari sekali
+
+=== pseudocode ===
+STORE member TO [
+  {name: Tono, schedule: 2},
+  {name: Anton, schedule: 4},
+  {name: Budi, schedule: 5}
+]
+
+LOOP i is 7 TO 31
+  STORE arr to empty array
+
+  LOOP j is 0 TO less than member length
+    IF member index j name is TONO and member index j schedule is 2
+      PUSH member j name TO arr
+      STORE member j schedule to 1
+
+    ELSE  IF member index j name is ANTON and member index j schedule is 4
+      PUSH member j name TO arr
+      STORE member j schedule to 1
+
+    ELSE  IF member index j name is Budi and member index j schedule is 5
+      PUSH member j name TO arr
+      STORE member j schedule to 1
+
+    ELSE
+      member j schedule PLUS 1
+    END IF
+    
+    j PLUS 1
+  END LOOP
+
+  IF i modulus 5 is 0
+    DISPLAY Tanggal i : Tempat Fitness Tutup
+  ELSE
+    JOIN arr with ', '
+    DISPLAY Tanggal i: arr
+  END IF
+
+  i PLUS 1
+END LOOP
