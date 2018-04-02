@@ -1,0 +1,32 @@
+Declare function problem-solving with parameter arr, buka and libur then
+  store str with empty string
+  store count with 0
+  for store i with buka and i <= 31 do
+    count++
+    add str by "Tanggal" +i+ ": "
+    if tanggal modulus libur is 0 then
+      add str by "Tempat Fitness Tutup"
+    else if i === buka then
+      for store j in arr do
+        add str by arr[j][0] + ', '
+        add j by 1
+      end for
+    else then
+      for store j each arr index do
+        if i-buka % arr[j][0] = 0 then
+          if j = arr.length-1 then
+            add str by arr[j][0]
+          else
+            add str by arr[j][0] + ', '  
+          end if
+        end if
+      end for
+    end if
+    if result of function str.charAt(str.length-1)=== ' ' AND result of str.charAt(str.length-2) === ',' then
+      set str with result of str.substr(0, str.length-2);
+    end if
+    add str by '\n'
+    add i by 1
+  end for
+  return str
+End function
