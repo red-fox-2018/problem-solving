@@ -1,0 +1,23 @@
+- input member berupa object dengan format nama(berisi nama dari member) dan schedule(berisi angka dari jadwal member)
+
+- buat variable "tanggalBuka" dengan value = 7
+
+- buat perulangan mulai dari angka variable "i" yang berisi angka "tanggalBuka" sampai angka 31 (angka dari hasil perulangan mewakili tanggal dalam 1 bulan).
+
+- buat variable jadwal yang berisi `Tanggal "i": `
+
+  * buat kondisi jika "i" merupakan kelipatan dari angka 5 maka tambahkan variable jadwal dengan string "Tempat Fitness Tutup",
+    lalu tampilkan "jadwal".
+
+  * jika tanggal merupakan selain kelipatan 5, maka :
+
+    # buat perulangan mulai dari angka variable "j" yang berisi 0 sampai sebanyak jumlah member, lalu buat kondisi :
+
+      * jika "i" dikurangi "tanggalBuka" ditambah schedule member index "j" merupakan kelipatan dari schedule member index "j"
+        maka tambahkan variable "jumlah" dengan nama dari member index "j"
+
+    # jika panjang variable "jadwal" lebih besar dari jumlah string `Tanggal "i": ` yang berjumlah 12, maka :
+
+      * lakukan slice untuk menghilangkan koma dibelakang variable "jadwal"
+
+    # jika tidak, maka tampilkan variable "jadwal"
