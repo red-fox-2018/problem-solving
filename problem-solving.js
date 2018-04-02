@@ -45,9 +45,9 @@ function daftarHadir(member, startDate, endDate) {
     }
 
   }
-  return '';
+  return null;
 }
 
 
 
-console.log(daftarHadir([['Tono', 2], ['Anton', 4], ['Budi', 5]], 7, 31));
+daftarHadir([['Tono', 2], ['Anton', 4], ['Budi', 5]], 7, 31);
