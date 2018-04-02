@@ -19,19 +19,19 @@ LOOP from startDate until 31
 
 */
 
-function daftarHadir(member, startDate) {
+function daftarHadir(member, startDate, endDate) {
   //[0] --> Tono
   //[1] --> Anton
   //[2] --> Budi
 
-  for (var i = startDate; i <= 31; i++) {
+  for (var i = startDate; i <= endDate; i++) {
     var hadir = '';
 
     if (i % 5 === 0) {
       console.log('Tanggal ' + i + ': ' + 'Tempat fitness tutup') ;
     } else {
       for (var j = 0; j < member.length; j++) {
-        for (var k = startDate; k <= 31; k += member[j][1]) {
+        for (var k = startDate; k <= endDate; k += member[j][1]) {
           if (i === k) {
             hadir += member[j][0] + ', ';
           }
@@ -50,4 +50,4 @@ function daftarHadir(member, startDate) {
 
 
 
-console.log(daftarHadir([['Tono', 2], ['Anton', 4], ['Budi', 5]], 7));
+console.log(daftarHadir([['Tono', 2], ['Anton', 4], ['Budi', 5]], 7, 31));
