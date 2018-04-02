@@ -8,6 +8,39 @@ CONSTRAIN:
 - budi 5 hari sekali
 - tempat fitnes libur setiap tanggal kelipatan 5
 
+====  PSEODOCODE ====
+
+FUNCTION solve(start, end, close, member)
+  INIT ans = ''
+  INIT tanggal = {}
+  FOR from i = start to <= end with counter i
+    tanggal[i] = []
+    IF (i % close == 0)
+      tanggal[i] = 'Tempat Fistess Tutup'
+    ELSE
+      FOR value in member)
+        IF ((i - start) % member[value] == 0)
+          tanggal[i].push(value)
+        END IF
+      END FOR
+    END IF
+  END FOR
+  FOR key in tanggal
+    IF typeof tanggal[key] equal 'string'
+      PRINT `Tanggal key: tanggal[key]`
+    ELSE IF tanggal[key].length equal 0
+      PRINT `Tanggal key`
+    ELSE IF tanggal[key].length > 0
+      INIT res = ``
+      FOR v of tanggal[key])
+        res += `v, `
+      END FOR
+      PRINT `Tanggal key: res.slice(0, -2)`)
+    END IF
+  END FOR
+END FUNCTION
+
+
 */
 
 function solve(start, end, close, member) {
@@ -26,7 +59,6 @@ function solve(start, end, close, member) {
     }
   }
   for (let key in tanggal) {
-    // console.log(typeof tanggal[key]);
     if (typeof tanggal[key] == 'string') {
       console.log(`Tanggal ${key}: ${tanggal[key]}`);
     } else if (tanggal[key].length == 0) {
@@ -44,4 +76,4 @@ function solve(start, end, close, member) {
 let member = { Tono: 2, Anton: 4, Budi: 5 };
 
 // driver code
-console.log(solve(7, 31, 5, member));
+solve(7, 31, 5, member);
